@@ -1,0 +1,121 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"stl": {
+		"prefix": "stl",
+		"body": [
+		  "#include<bits/stdc++.h>",
+		  "#define ll long long",
+		  "#define vll vector<ll> ",
+		  "#define vi vector<int> ",
+		  "#define vpi vector<pair<int,int>> ",
+		  "#define vpll vector<pair<long long,long long>> ",
+		  "#define umi unordered_map<int,int>",
+		  "#define pb push_back",
+		  "#define minheap priority_queue<int, vector<int>, greater<int> >",
+		  "#define maxheap priority_queue<int> ",
+		  "#define pi pair<int,int> ",
+		  "#define pll pair<long long, long long> ",
+		  "#define rep(i,start,end) for(int i=start; i<end; i++) ",
+		  "#define endl \"\\n\"",
+		  "using namespace std;",
+		  "long long M = 1e9+7;",
+		  "",
+		  "",
+		  "// --------------------------------------------------------------------------------------------",
+		  "",
+		  "",
+		  "void solve();",
+		  "int main()",
+		  "{",
+		  "    ios_base::sync_with_stdio(false);",
+		  "    cin.tie(NULL);",
+		  "",
+		  "    int t;",
+		  "    cin >> t;",
+		  "    while(t--){",
+		  "       solve();",
+		  "    }",
+		  "    return 0;",
+		  "}",
+		  "",
+		  "void solve(){",
+		  "    ",
+		  "}"
+		],
+		"description": ""
+	  },
+
+	  "segtree": {
+		"prefix": "_segtree",
+		"body": [
+		  "int ctree(vi &tree, vi &arr, int ind, int si, int ei){",
+		  "    if(si == ei){",
+		  "        tree[ind] = arr[si];",
+		  "        return tree[ind];",
+		  "    }",
+		  "        int mid = (si + ei)/2;",
+		  "        int left = ctree(tree, arr, ind*2+1, si, mid);",
+		  "        int right = ctree(tree, arr, ind*2+2, mid+1, ei);",
+		  "        tree[ind] = left+right;",
+		  "    return left+right;",
+		  "}",
+		  "",
+		  "",
+		  "",
+		  "int getsum(vi &tree, int qs, int qe, int si, int ei, int ind){",
+		  "    if(ei<qs || si > qe) return 0;",
+		  "    if(si >=qs && ei <= qe)",
+		  "        return tree[ind];",
+		  "    int mid = (si + ei)/2;",
+		  "    return getsum(tree, qs, qe, si, mid, ind*2+1)",
+		  "        + getsum(tree, qs, qe, mid+1, ei, ind*2+2);",
+		  "}",
+		  "",
+		  "",
+		  "void update(vi &tree, int qi, int si, int ei, int ind, int diff){",
+		  "    // cout << \"si is \" << si << \" and ei is \" << ei << endl;",
+		  "    if(qi >= si && qi <= ei){",
+		  "        tree[ind] = tree[ind] + diff;",
+		  "        int mid = (si+ei)/2;",
+		  "        if(ei > si){",
+		  "            update(tree, qi, si, mid, ind*2+1, diff);",
+		  "            update(tree, qi, mid+1, ei, ind*2+2, diff);",
+		  "        }",
+		  "    }",
+		  "",
+		  "}"
+		],
+		"description": "generates segtree with make, update, getsum function"
+	  },
+
+	  "lcm": {
+		"prefix": "__lcm",
+		"body": [
+		  "long long gcd(long long int a, long long int b)",
+		  "{",
+		  "  if (b == 0)",
+		  "    return a;",
+		  "  return gcd(b, a % b);",
+		  "}",
+		  " ",
+		  "long long lcm(long long int a, long long int b)",
+		  "{",
+		  "    return (a / gcd(a, b)) * b;",
+		  "}"
+		],
+		"description": ""
+	  }
+}

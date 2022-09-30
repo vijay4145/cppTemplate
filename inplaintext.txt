@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define vll vector<ll> 
+#define vi vector<int> 
+#define vpi vector<pair<int,int>> 
+#define vpll vector<pair<long long,long long>> 
+#define umi unordered_map<int,int>
+#define pb push_back
+#define minheap priority_queue<int, vector<int>, greater<int> >
+#define maxheap priority_queue<int> 
+#define pi pair<int,int> 
+#define pll pair<long long, long long> 
+#define rep(i,start,end) for(int i=start; i<end; i++) 
+#define endl "\n"
+using namespace std;
+long long M = 1e9+7;
+
+
+// --------------------------------------------------------------------------------------------
+
+
+void solve();
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin >> t;
+    while(t--){
+       solve();
+    }
+    return 0;
+}
+
+void solve(){
+       
+}
